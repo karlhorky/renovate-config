@@ -11,6 +11,6 @@
   ],
   "schedule": "at any time",
   "vulnerabilityAlerts": {
-    "schedule": "at any time"
+    "schedule": null
   }
 }
