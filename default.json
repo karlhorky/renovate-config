@@ -9,7 +9,7 @@
       "groupName": "dependencies (non-major)"
     }
   ],
-  "schedule": "after 6pm on thursday",
+  "schedule": "after 4pm on thursday",
   "vulnerabilityAlerts": {
     "schedule": null
   }
