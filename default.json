@@ -7,6 +7,11 @@
       "depTypeList": ["devDependencies", "dependencies", "peerDependencies"],
       "updateTypes": ["patch", "minor"],
       "groupName": "dependencies (non-major)"
+    },
+    {
+      "description": "node: prefixes are no longer working due to https://github.com/DefinitelyTyped/DefinitelyTyped/pull/52595",
+      "matchPackageNames": ["@types/node"],
+      "allowedVersions": "!/14.14.44/"
     }
   ],
   "schedule": "after 4pm on thursday",
