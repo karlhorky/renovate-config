@@ -22,6 +22,15 @@
         "major"
       ],
       "enabled": true
+    },
+    {
+      "matchManagers": [
+        "npm"
+      ],
+      "matchPackageNames": [
+        "@types/node"
+      ],
+      "versioning": "npm"
     }
   ],
   "schedule": "after 4pm on thursday",
