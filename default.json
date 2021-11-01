@@ -8,7 +8,6 @@
       "groupName": "dependency upgrades - non-major",
       "depTypeList": ["devDependencies", "dependencies", "peerDependencies", "resolutions"],
       "updateTypes": ["patch", "minor"],
-      "matchCurrentVersion": "!/^0/",
       "automerge": true
     },
     {
