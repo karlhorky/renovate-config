@@ -20,7 +20,7 @@ The configuration blocks below are these blocks that should be currently disable
 
 Since these actions don't get major version bumps often, manually merging is probably still acceptable:
 
-```
+```json
     {
       "groupName": "GitHub Official Actions - major",
       "depTypeList": ["action"],
