@@ -1,4 +1,4 @@
-module.exports = {
+module.exports = 
   extends: ['config:base'],
   ignorePresets: [':prHourlyLimit2'],
   packageRules: [
