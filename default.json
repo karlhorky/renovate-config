@@ -1,47 +1,39 @@
 {
-  extends: ["config:base"],
-  ignorePresets: [":prHourlyLimit2"],
-  packageRules: [
+  "extends": ["config:base"],
+  "ignorePresets": [":prHourlyLimit2"],
+  "packageRules": [
     {
-      groupName: "dependency upgrades - non-major",
-      depTypeList: [
+      "groupName": "dependency upgrades - non-major",
+      "depTypeList": [
         "devDependencies",
         "dependencies",
         "peerDependencies",
-        "resolutions",
+        "resolutions"
       ],
-      updateTypes: ["patch", "minor"],
-      automerge: true,
+      "updateTypes": ["patch", "minor"],
+      "automerge": true
     },
     {
-      groupName: "eslint devDependencies - major",
-      depTypeList: [
+      "groupName": "eslint devDependencies - major",
+      "depTypeList": [
         "devDependencies",
         "dependencies",
         "peerDependencies",
-        "resolutions",
+        "resolutions"
       ],
-      updateTypes: ["major"],
-      matchPackageNames: ["eslint-plugin-unicorn"],
-      automerge: true,
+      "updateTypes": ["major"],
+      "matchPackageNames": ["eslint-plugin-unicorn"],
+      "automerge": true
     },
     {
-      description:
-        "Enable major version upgrades of @types/node https://github.com/renovatebot/renovate/issues/1463#issuecomment-875014401",
-      matchManagers: ["npm"],
-      matchPackageNames: ["@types/node"],
-      versioning: "npm",
-    },
-    // {
-    //   "groupName": "GitHub Official Actions - major",
-    //   "depTypeList": ["action"],
-    //   "updateTypes": ["major"],
-    //   "matchPackageNames": ["actions/checkout", "actions/setup-node", "actions/upload-artifact"],
-    //   "automerge": true
-    // },
+      "description": "Enable major version upgrades of @types/node https://github.com/renovatebot/renovate/issues/1463#issuecomment-875014401",
+      "matchManagers": ["npm"],
+      "matchPackageNames": ["@types/node"],
+      "versioning": "npm"
+    }
   ],
-  schedule: "after 4pm on thursday",
-  vulnerabilityAlerts: {
-    schedule: null,
-  },
+  "schedule": "after 4pm on thursday",
+  "vulnerabilityAlerts": {
+    "schedule": null
+  }
 }
