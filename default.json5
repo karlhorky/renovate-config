@@ -15,7 +15,7 @@
       automerge: true,
     },
     {
-      groupName: 'eslint devDependencies - major',
+      groupName: 'dependency upgrades - non-major',
       depTypeList: [
         'devDependencies',
         'dependencies',
