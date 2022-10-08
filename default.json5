@@ -3,7 +3,7 @@
   ignorePresets: [':prHourlyLimit2'],
   packageRules: [
     {
-      groupName: 'dependency upgrades - non-major',
+      // groupName: 'dependency upgrades - non-major',
       depTypeList: [
         'devDependencies',
         'dependencies',
@@ -15,7 +15,7 @@
       automerge: true,
     },
     {
-      groupName: 'dependency upgrades - non-major',
+      // groupName: 'dependency upgrades - non-major',
       depTypeList: [
         'devDependencies',
         'dependencies',
