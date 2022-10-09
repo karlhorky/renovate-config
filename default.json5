@@ -1,6 +1,10 @@
 {
   extends: ['config:base'],
   ignorePresets: [':prHourlyLimit2'],
+  // Allow the major versions in the `dependency upgrades - non-major` groups
+  // below to be combined with the minors and patches
+  // https://github.com/renovatebot/renovate/issues/18211#issuecomment-1272521018
+  separateMajorMinor: false,
   packageRules: [
     {
       groupName: 'dependency upgrades - non-major',
@@ -15,9 +19,6 @@
       // Packages which have opted in to major version updates as well (see next object below)
       excludePackageNames: ['eslint-plugin-unicorn'],
       automerge: true,
-      // Allow these major versions to be combined with the minors and patches above
-      // https://github.com/renovatebot/renovate/issues/18211#issuecomment-1272521018
-      separateMajorMinor: false,
     },
     {
       groupName: 'dependency upgrades - non-major',
@@ -31,9 +32,6 @@
       updateTypes: ['patch', 'minor', 'major'],
       matchPackageNames: ['eslint-plugin-unicorn'],
       automerge: true,
-      // Allow these major versions to be combined with the minors and patches above
-      // https://github.com/renovatebot/renovate/issues/18211#issuecomment-1272521018
-      separateMajorMinor: false,
     },
     {
       description: 'Enable major version upgrades of @types/node https://github.com/renovatebot/renovate/issues/1463#issuecomment-875014401',
