@@ -16,8 +16,6 @@
         'overrides',
       ],
       updateTypes: ['patch', 'minor'],
-      // Packages which have opted in to major version updates as well (see next object below)
-      excludePackageNames: ['eslint-plugin-unicorn'],
       automerge: true,
     },
     {
@@ -29,7 +27,7 @@
         'resolutions',
         'overrides',
       ],
-      updateTypes: ['patch', 'minor', 'major'],
+      updateTypes: ['major'],
       matchPackageNames: ['eslint-plugin-unicorn'],
       automerge: true,
     },
