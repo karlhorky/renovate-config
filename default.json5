@@ -32,6 +32,18 @@
       automerge: true,
     },
     {
+      groupName: 'dependency upgrades - major',
+      depTypeList: [
+        'devDependencies',
+        'dependencies',
+        'peerDependencies',
+        'resolutions',
+        'overrides',
+      ],
+      updateTypes: ['major'],
+      matchPackagePatterns: ['^eslint-plugin-unicorn'],
+    },
+    {
       description: 'Enable major version upgrades of @types/node https://github.com/renovatebot/renovate/issues/1463#issuecomment-875014401',
       matchManagers: ['npm'],
       matchPackageNames: ['@types/node'],
