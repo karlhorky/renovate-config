@@ -57,6 +57,20 @@
     //   "matchPackageNames": ["actions/checkout", "actions/setup-node", "actions/upload-artifact"],
     //   "automerge": true
     // },
+    {
+      matchCurrentVersion: '>=4.0.0',
+      matchDatasources: ['npm'],
+      matchPackageNames: ['@upleveled/eslint-config-upleveled'],
+      replacementName: 'eslint-config-upleveled',
+      replacementVersion: '4.0.12',
+    },
+    {
+      matchCurrentVersion: '>=2.0.0',
+      matchDatasources: ['npm'],
+      matchPackageNames: ['@upleveled/eslint-plugin-upleveled'],
+      replacementName: 'eslint-plugin-upleveled',
+      replacementVersion: '2.1.7',
+    },
   ],
   schedule: 'after 4pm on thursday',
   vulnerabilityAlerts: {
