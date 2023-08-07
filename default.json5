@@ -76,4 +76,7 @@
   vulnerabilityAlerts: {
     schedule: null,
   },
+  // Remediate vulnerabilities in transitive dependencies
+  // https://docs.renovatebot.com/configuration-options/#transitiveremediation
+  transitiveRemediation: true,
 }
