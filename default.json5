@@ -8,7 +8,7 @@
   packageRules: [
     {
       groupName: 'dependency upgrades - non-major',
-      depTypeList: [
+      matchDepTypes: [
         'devDependencies',
         'dependencies',
         'peerDependencies',
@@ -20,7 +20,7 @@
     },
     {
       groupName: 'dependency upgrades - non-major',
-      depTypeList: [
+      matchDepTypes: [
         'devDependencies',
         'dependencies',
         'peerDependencies',
@@ -33,7 +33,7 @@
     },
     {
       groupName: 'dependency upgrades - major',
-      depTypeList: [
+      matchDepTypes: [
         'devDependencies',
         'dependencies',
         'peerDependencies',
@@ -52,7 +52,7 @@
     // Disabled since these GitHub Actions don't get major version bumps often
     // {
     //   "groupName": "GitHub Official Actions - major",
-    //   "depTypeList": ["action"],
+    //   "matchDepTypes": ["action"],
     //   "updateTypes": ["major"],
     //   "matchPackageNames": ["actions/checkout", "actions/setup-node", "actions/upload-artifact"],
     //   "automerge": true
