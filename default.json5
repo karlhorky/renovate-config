@@ -1,5 +1,5 @@
 {
-  extends: ['config:base'],
+  extends: ['config:base', 'group:remark'],
   ignorePresets: [':prHourlyLimit2'],
   // Allow the major versions in the `dependency upgrades - non-major` groups
   // below to be combined with the minors and patches
