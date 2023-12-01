@@ -1,5 +1,24 @@
 {
-  extends: ['config:base', 'group:remark'],
+  extends: [
+    'config:base',
+    // Currently waiting on hosted Renovate update:
+    //
+    // This is not yet working because the hosted Renovate version is `37.59.8`:
+    // 
+    // ```json
+    // {
+    //   "renovateVersion": "37.59.8"
+    // }
+    // ```
+    // 
+    // https://developer.mend.io/github/upleveled/security-vulnerability-examples-next-js-postgres/-/job/018c2689-b103-7efd-8f9a-ff63fbc2f566
+    // 
+    // Whereas the fix has been made in `37.77.0`:
+    // 
+    // https://github.com/renovatebot/renovate/pull/25969#issuecomment-1834481586
+    //
+    // 'group:remark'
+  ],
   ignorePresets: [':prHourlyLimit2'],
   // Allow the major versions in the `dependency upgrades - non-major` groups
   // below to be combined with the minors and patches
