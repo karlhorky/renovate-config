@@ -82,6 +82,10 @@
       replacementName: 'eslint-plugin-upleveled',
       replacementVersion: '2.1.7',
     },
+    {
+      matchManagers: ['github-actions'],
+      matchPackageNames: ['pnpm/action-setup'],
+    },
   ],
   schedule: 'after 4pm on thursday',
   vulnerabilityAlerts: {
