@@ -12,6 +12,13 @@
   separateMajorMinor: false,
   packageRules: [
     {
+      groupName: 'github-actions dependency upgrades - major',
+      matchManagers: ['github-actions'],
+      matchPackageNames: ['actions/*', 'pnpm/action-setup'],
+      updateTypes: ['major'],
+      automerge: true,
+    },
+    {
       groupName: 'dependency upgrades - non-major',
       matchDepTypes: [
         'devDependencies',
@@ -81,10 +88,6 @@
       matchPackageNames: ['@upleveled/eslint-plugin-upleveled'],
       replacementName: 'eslint-plugin-upleveled',
       replacementVersion: '2.1.7',
-    },
-    {
-      matchManagers: ['github-actions'],
-      matchPackageNames: ['pnpm/action-setup'],
     },
   ],
   schedule: 'after 4pm on thursday',
