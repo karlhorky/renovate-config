@@ -1,6 +1,8 @@
 # renovate-config
 
-Use by extending in your `renovate.json`:
+Configuration for [Renovate Bot](https://github.com/apps/renovate).
+
+Use by creating `renovate.json` in your project root:
 
 ```json
 {
