@@ -11,28 +11,21 @@
   // https://github.com/renovatebot/renovate/issues/18211#issuecomment-1272521018
   separateMajorMinor: false,
   packageRules: [
-    // Run `pnpm dedupe` after pnpm-lock.yaml updates
-    // - https://docs.renovatebot.com/configuration-options/#:~:text=for%20npm%20%3C%3D%206.-,pnpmDedupe,pnpm%20dedupe%20%2D%2Dconfig.ignore%2Dscripts%3Dtrue%20after%20pnpm%2Dlock.yaml%20updates.,-yarnDedupeFewer
-    // - https://github.com/renovatebot/renovate/pull/36554#issuecomment-2988439293
-    {
-      matchPackageNames: ['!pnpm'],
-      postUpdateOptions: ['pnpmDedupe'],
-    },
+    // pnpmDedupe currently broken:
+    // - https://github.com/renovatebot/renovate/pull/36554#issuecomment-2989926469
+    // // Run `pnpm dedupe` after pnpm-lock.yaml updates
+    // // - https://docs.renovatebot.com/configuration-options/#:~:text=for%20npm%20%3C%3D%206.-,pnpmDedupe,pnpm%20dedupe%20%2D%2Dconfig.ignore%2Dscripts%3Dtrue%20after%20pnpm%2Dlock.yaml%20updates.,-yarnDedupeFewer
+    // // - https://github.com/renovatebot/renovate/pull/36554#issuecomment-2988439293
+    // {
+    //   matchPackageNames: ['!pnpm'],
+    //   postUpdateOptions: ['pnpmDedupe'],
+    // },
     {
       groupName: 'github-actions dependency upgrades - major',
       matchManagers: ['github-actions'],
       matchPackageNames: ['pnpm/action-setup'],
       matchPackagePatterns: ['^actions/'],
       updateTypes: ['major'],
-      automerge: true,
-    },
-    // "postUpdateOptions": ["pnpmDedupe"] currently cannot be applied to `pnpm`
-    // - https://github.com/renovatebot/renovate/pull/36554#issuecomment-2991578549
-    {
-      groupName: 'pnpm upgrades - non-major',
-      matchDepTypes: ['packageManager'],
-      matchPackageNames: ['pnpm'],
-      updateTypes: ['patch', 'minor'],
       automerge: true,
     },
     {
@@ -45,11 +38,6 @@
         'overrides',
         'pnpm.overrides',
         'packageManager',
-      ],
-      matchPackageNames: [
-        // "postUpdateOptions": ["pnpmDedupe"] currently cannot be applied to `pnpm`
-        // - https://github.com/renovatebot/renovate/pull/36554#issuecomment-2991578549
-        '!pnpm',
       ],
       updateTypes: ['patch', 'minor'],
       automerge: true,
