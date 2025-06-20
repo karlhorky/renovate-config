@@ -26,6 +26,15 @@
       updateTypes: ['major'],
       automerge: true,
     },
+    // "postUpdateOptions": ["pnpmDedupe"] currently cannot be applied to `pnpm`
+    // - https://github.com/renovatebot/renovate/pull/36554#issuecomment-2991578549
+    {
+      groupName: 'pnpm upgrades - non-major',
+      matchDepTypes: ['packageManager'],
+      matchPackageNames: ['pnpm'],
+      updateTypes: ['patch', 'minor'],
+      automerge: true,
+    },
     {
       groupName: 'dependency upgrades - non-major',
       matchDepTypes: [
@@ -38,8 +47,8 @@
         'packageManager',
       ],
       matchPackageNames: [
-        // pnpmDedupe currently broken with pnpm package:
-        // - https://github.com/renovatebot/renovate/pull/36554#issuecomment-2990178762
+        // "postUpdateOptions": ["pnpmDedupe"] currently cannot be applied to `pnpm`
+        // - https://github.com/renovatebot/renovate/pull/36554#issuecomment-2991578549
         '!pnpm',
       ],
       updateTypes: ['patch', 'minor'],
