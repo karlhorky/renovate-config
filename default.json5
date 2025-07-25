@@ -1,7 +1,8 @@
 {
   extends: [
     'config:base',
-    // Upgrade all remark packages with URL prefix https://github.com/remarkjs/
+    // Upgrade all remark packages with URL prefix
+    // `https://github.com/remarkjs/`
     // - https://github.com/renovatebot/renovate/pull/25969
     'group:remark',
   ],
@@ -9,8 +10,9 @@
   // Run `pnpm dedupe` after pnpm-lock.yaml updates
   // - https://docs.renovatebot.com/configuration-options/#postupdateoptions
   postUpdateOptions: ['pnpmDedupe'],
-  // Allow the major versions in the `dependency upgrades - non-major` groups
-  // below to be combined with the minors and patches
+  // Allow the major versions in the `dependency upgrades -
+  // non-major` groups below to be combined with the minors and
+  // patches
   // - https://github.com/renovatebot/renovate/issues/18211#issuecomment-1272521018
   separateMajorMinor: false,
   packageRules: [
@@ -20,6 +22,13 @@
       matchPackageNames: ['pnpm/action-setup'],
       matchPackagePatterns: ['^actions/'],
       updateTypes: ['major'],
+      automerge: true,
+    },
+    {
+      groupName: 'bun version updates',
+      matchManagers: ['bun-version'],
+      matchPackageNames: ['bun'],
+      updateTypes: ['patch', 'minor'],
       automerge: true,
     },
     {
@@ -71,7 +80,9 @@
       matchPackageNames: ['@types/node'],
       versioning: 'npm',
     },
-    // Disabled since these GitHub Actions don't get major version bumps often
+    // Disabled since these GitHub Actions don't get major
+    // version bumps often
+    // ```
     // {
     //   "groupName": "GitHub Official Actions - major",
     //   "matchDepTypes": ["action"],
@@ -79,6 +90,7 @@
     //   "matchPackageNames": ["actions/checkout", "actions/setup-node", "actions/upload-artifact"],
     //   "automerge": true
     // },
+    // ```
     {
       matchCurrentVersion: '>=4.0.0',
       matchDatasources: ['npm'],
