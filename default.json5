@@ -25,6 +25,12 @@
       automerge: true,
     },
     {
+      groupName: 'github-actions dependency upgrades - non-major',
+      matchManagers: ['github-actions'],
+      updateTypes: ['patch', 'minor'],
+      automerge: true,
+    },
+    {
       groupName: 'bun version updates',
       matchManagers: ['bun-version'],
       matchPackageNames: ['bun'],
