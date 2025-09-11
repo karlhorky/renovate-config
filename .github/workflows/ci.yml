@@ -11,4 +11,4 @@ jobs:
       - uses: actions/setup-node@v5
         with:
           node-version: '22.19.0'
-      - run: npx --package renovate -- renovate-config-validator --strict
+      - run: npx --package renovate -- renovate-config-validator --strict default.json5
