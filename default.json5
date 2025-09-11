@@ -37,7 +37,7 @@
       groupName: 'github-actions dependency upgrades - major',
       matchManagers: ['github-actions'],
       matchPackageNames: ['pnpm/action-setup', '/^actions//'],
-      updateTypes: ['major'],
+      matchUpdateTypes: ['major'],
       automerge: true,
     },
     {
