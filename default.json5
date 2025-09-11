@@ -6,6 +6,9 @@
     // - https://github.com/renovatebot/renovate/pull/25969
     'group:remark',
   ],
+  // Enable Config Migration PRs
+  // - https://docs.renovatebot.com/config-migration
+  configMigration: true,
   ignorePresets: [':prHourlyLimit2'],
   // Run `pnpm dedupe` after pnpm-lock.yaml updates
   // - https://docs.renovatebot.com/configuration-options/#postupdateoptions
