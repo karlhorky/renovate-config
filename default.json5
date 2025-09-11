@@ -15,12 +15,19 @@
   // patches
   // - https://github.com/renovatebot/renovate/issues/18211#issuecomment-1272521018
   separateMajorMinor: false,
-  // Require a minimum of 7 days since new version releases to
-  // reduce security breach risks with compromised packages
-  // - https://docs.renovatebot.com/configuration-options/#minimumreleaseage
-  // - https://github.com/pnpm/pnpm/issues/9921#issuecomment-3269693633
-  minimumReleaseAge: '7 days',
   packageRules: [
+    // Require a minimum of 7 days since new version releases to
+    // reduce security breach risks with compromised packages
+    // - https://docs.renovatebot.com/configuration-options/#minimumreleaseage
+    // - https://github.com/pnpm/pnpm/issues/9921#issuecomment-3269693633
+    //
+    // Exception: UpLeveled config packages
+    {
+      minimumReleaseAge: '7 days',
+      matchPackageNames: [
+        '/^(?!eslint-config-upleveled|stylelint-config-upleveled)$/',
+      ],
+    },
     {
       groupName: 'github-actions dependency upgrades - major',
       matchManagers: ['github-actions'],
