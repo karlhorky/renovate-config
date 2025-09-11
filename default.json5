@@ -1,6 +1,6 @@
 {
   extends: [
-    'config:base',
+    'config:recommended',
     // Upgrade all remark packages with URL prefix
     // `https://github.com/remarkjs/`
     // - https://github.com/renovatebot/renovate/pull/25969
@@ -36,22 +36,21 @@
     {
       groupName: 'github-actions dependency upgrades - major',
       matchManagers: ['github-actions'],
-      matchPackageNames: ['pnpm/action-setup'],
-      matchPackagePatterns: ['^actions/'],
+      matchPackageNames: ['pnpm/action-setup', '/^actions//'],
       updateTypes: ['major'],
       automerge: true,
     },
     {
       groupName: 'github-actions dependency upgrades - non-major',
       matchManagers: ['github-actions'],
-      updateTypes: ['patch', 'minor'],
+      matchUpdateTypes: ['patch', 'minor'],
       automerge: true,
     },
     {
       groupName: 'bun version updates',
       matchManagers: ['bun-version'],
       matchPackageNames: ['bun'],
-      updateTypes: ['patch', 'minor'],
+      matchUpdateTypes: ['patch', 'minor'],
       automerge: true,
     },
     {
@@ -65,7 +64,7 @@
         'pnpm.overrides',
         'packageManager',
       ],
-      updateTypes: ['patch', 'minor'],
+      matchUpdateTypes: ['patch', 'minor'],
       automerge: true,
     },
     {
@@ -79,7 +78,7 @@
         'pnpm.overrides',
         'packageManager',
       ],
-      updateTypes: ['major'],
+      matchUpdateTypes: ['major'],
       matchPackageNames: ['eslint-plugin-unicorn'],
       automerge: true,
     },
@@ -94,8 +93,8 @@
         'pnpm.overrides',
         'packageManager',
       ],
-      updateTypes: ['major'],
-      matchPackagePatterns: ['^eslint-plugin-unicorn'],
+      matchUpdateTypes: ['major'],
+      matchPackageNames: ['/^eslint-plugin-unicorn/'],
     },
     {
       description: 'Enable major version upgrades of @types/node https://github.com/renovatebot/renovate/issues/1463#issuecomment-875014401',
@@ -109,7 +108,7 @@
     // {
     //   "groupName": "GitHub Official Actions - major",
     //   "matchDepTypes": ["action"],
-    //   "updateTypes": ["major"],
+    //   "matchUpdateTypes": ["major"],
     //   "matchPackageNames": ["actions/checkout", "actions/setup-node", "actions/upload-artifact"],
     //   "automerge": true
     // },
@@ -133,7 +132,4 @@
   vulnerabilityAlerts: {
     schedule: null,
   },
-  // Remediate vulnerabilities in transitive dependencies
-  // - https://docs.renovatebot.com/configuration-options/#transitiveremediation
-  transitiveRemediation: true,
 }
