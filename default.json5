@@ -29,7 +29,6 @@
       matchPackageNames: [
         'eslint-config-upleveled',
         'stylelint-config-upleveled',
-        'stylelint',
       ],
       minimumReleaseAge: '0 days',
     },
