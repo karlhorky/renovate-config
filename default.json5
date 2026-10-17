@@ -53,6 +53,11 @@
       automerge: true,
     },
     {
+      matchDepTypes: ['devEngines.packageManager'],
+      matchUpdateTypes: ['patch', 'minor'],
+      automerge: true,
+    },
+    {
       groupName: 'dependency upgrades - non-major',
       matchDepTypes: [
         'devDependencies',
